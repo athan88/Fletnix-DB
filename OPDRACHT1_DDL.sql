@@ -1,4 +1,4 @@
-
+select * from Movie
 go
 use master
 go
@@ -53,10 +53,10 @@ create table Movie
 		on delete no action
 		on update no action, 
 
-		constraint ak_Movie_Publication_year check(publication_year > 1889 AND publication_year <= year(getdate())),
-		constraint ak_Movie_URL unique([URL]),
-		constraint ak_Movie_price check(price > 0),
-		constraint ak_Movie_description unique([description])
+/*		constraint ak_Movie_duration check(duration > 0), constraint ak_Movie_title unique(title),		Constraints werken niet met de IMDB database*/
+
+		constraint ak_Movie_price check(price > 0)
+
 
 )
 
